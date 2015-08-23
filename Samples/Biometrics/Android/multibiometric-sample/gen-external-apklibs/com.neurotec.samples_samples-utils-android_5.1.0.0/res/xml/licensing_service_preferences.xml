@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<ListPreference android:key="licensing_mode"
+		android:title="@string/msg_licensing_mode" />
+
+	<PreferenceCategory android:title="@string/msg_licensing_server" >
+		<EditTextPreference android:key="licensing_server_address"
+			android:title="@string/msg_licensing_server_address"
+			android:singleLine="true"
+			android:defaultValue="/local"/>
+
+		<EditTextPreference android:key="licensing_server_port"
+			android:title="@string/msg_licensing_server_port"
+			android:inputType="number"
+			android:singleLine="true"
+			android:defaultValue="5000"/>
+	</PreferenceCategory>
+
+	<Preference android:key="set_default_preferences"
+		android:title="@string/msg_reset_to_defaults"
+		android:summary="@string/msg_reset_to_defaults_summary">
+	</Preference>
+
+</PreferenceScreen>

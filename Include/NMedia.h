@@ -1,0 +1,53 @@
+#ifndef N_MEDIA_LIBRARY_H_INCLUDED
+#define N_MEDIA_LIBRARY_H_INCLUDED
+
+#include <Geometry/NGeometry.h>
+#include <Images/NPixelFormat.h>
+#include <Images/Interop/NImageDefWinTypes.h>
+#include <Images/Interop/NImageUndefWinTypes.h>
+#include <Images/NImage.h>
+#include <Images/NImageFormat.h>
+#include <Images/NImageReader.h>
+#include <Images/NImageWriter.h>
+#include <Images/NImageInfo.h>
+#include <Images/NImages.h>
+#include <Images/NMonochromeImage.h>
+#include <Images/NGrayscaleImage.h>
+#include <Images/NRgb.h>
+#include <Images/NRgbImage.h>
+#include <Images/Bmp.h>
+#include <Images/Tiff.h>
+#include <Images/Jpeg.h>
+#include <Images/Png.h>
+#include <Images/Jpeg2K.h>
+#include <Images/Wsq.h>
+#include <Images/NistCom.h>
+#include <Images/IHead.h>
+#include <Media/NSampleFormat.h>
+#include <Media/NMediaTypes.h>
+#include <Media/NMediaFormat.h>
+#include <Media/NAudioFormat.h>
+#include <Media/NVideoFormat.h>
+#include <Media/NMediaSource.h>
+#include <Media/NMediaReader.h>
+#include <Media/NVideoWriter.h>
+#include <Media/NVideoWriterOptions.h>
+#include <Media/NMedia.h>
+#include <SmartCards/SimpleTag.h>
+#include <SmartCards/SimpleTlv.h>
+#include <SmartCards/BerTag.h>
+#include <SmartCards/BerTlv.h>
+#include <SmartCards/PrimitiveBerTlv.h>
+#include <SmartCards/ConstructedBerTlv.h>
+#include <SmartCards/ApduClass.h>
+#include <SmartCards/ApduInstruction.h>
+#include <SmartCards/ApduStatus.h>
+#ifdef N_WINDOWS
+#include <SmartCards/NSmartCardsCommands.h>
+#endif
+#include <SmartCards/NSmartCardsDataElements.h>
+#include <SmartCards/NSmartCardsBiometry.h>
+#include <Sound/NSoundFormat.h>
+#include <Sound/NSoundBuffer.h>
+
+#endif // !N_MEDIA_LIBRARY_H_INCLUDED

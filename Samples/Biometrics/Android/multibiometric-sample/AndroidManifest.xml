@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.neurotec.samples.multibiometric"
+	android:versionCode="1"
+	android:versionName="5.1.0.0">
+
+	<uses-sdk android:minSdkVersion="14"
+		android:targetSdkVersion="19" />
+
+
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.READ_OWNER_DATA" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+	<uses-feature android:name="android.hardware.usb.host" />
+
+	<application
+		android:hardwareAccelerated="true"
+		android:name="BiometricApplication"
+		package="com.neurotec.samples.multibiometric"
+		android:icon="@com.neurotec.samples.multibiometric:drawable/hand"
+		android:theme="@android:style/Theme.Holo.Light"
+		android:label="@string/app_name">
+
+		<!-- Common -->
+		<activity android:name="com.neurotec.samples.app.InfoActivity"></activity>
+		<activity android:name="com.neurotec.samples.app.InputSourceActivity"></activity>
+		<activity android:name="com.neurotec.samples.app.DirectoryViewer"></activity>
+
+		<activity android:name="org.acra.CrashReportDialog"
+			android:theme="@android:style/Theme.Dialog"
+			android:launchMode="singleInstance"
+			android:excludeFromRecents="true"
+			android:finishOnTaskLaunch="true">
+		</activity>
+
+		<!-- Licensing -->
+
+		<activity android:name="com.neurotec.samples.licensing.app.LicensingServiceReportActivity"></activity>
+		<activity android:name="com.neurotec.samples.licensing.preference.LicensingPreferences"></activity>
+		<activity android:name="com.neurotec.samples.licensing.preference.LicensingServicePreferences"
+				android:parentActivityName="com.neurotec.samples.licensing.preference.LicensingPreferences">
+				<meta-data
+						android:name="android.support.PARENT_ACTIVITY"
+						android:value="com.neurotec.samples.licensing.preference.LicensingPreferences" />
+		</activity>
+
+		<!-- Fingers -->
+		<activity
+			android:name=".fingers.FingerActivity"
+			android:label="Muzima Fingerprint"
+			android:taskAffinity="com.neurotec.samples.multibiometric.fingers"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".fingers.preference.FingerPreferences"
+				android:parentActivityName="com.neurotec.samples.multibiometric.fingers.FingerActivity" >
+			<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value="com.neurotec.samples.multibiometric.fingers.FingerActivity" />
+		</activity>
+
+		<service
+			android:name="com.neurotec.licensing.NPGService"
+			android:enabled="true"
+			android:process="com.neurotec.licensing.NPGService" >
+			<intent-filter>
+				<action android:name="com.neurotec.licensing.NPGService" />
+			</intent-filter>
+		</service>
+		<service
+			android:name="com.neurotec.licensing.NIDGenService"
+			android:enabled="true"
+			android:process="com.neurotec.licensing.NIDGenService" >
+			<intent-filter>
+				<action android:name="com.neurotec.licensing.NIDGenService" />
+			</intent-filter>
+		</service>
+		<service
+			android:name="com.neurotec.licensing.NPGMonitor"
+			android:enabled="true"
+			android:process="com.neurotec.licensing.NPGMonitor" >
+			<intent-filter>
+				<action android:name="com.neurotec.licensing.NPGMonitor" />
+			</intent-filter>
+		</service>
+	</application>
+
+</manifest>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.neurotec.samples.widget.CheckableRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layout_license_list_item"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" >
+
+	<ImageView
+		android:id="@+id/list_item_license_image"
+		android:layout_width="50dip"
+		android:layout_height="50dip"
+		android:layout_alignParentLeft="true"
+		android:focusable="false"
+		android:scaleType="centerCrop" />
+
+	<TextView
+		android:id="@+id/list_item_license_text"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dip"
+		android:layout_toRightOf="@+id/list_item_license_image"
+		android:layout_toLeftOf="@+id/list_item_license_check_box"
+		android:focusable="false"
+		android:textSize="20dip" />
+
+	<CheckBox
+		android:id="@+id/list_item_license_check_box"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:clickable="false"
+		android:focusable="false" />
+
+</com.neurotec.samples.widget.CheckableRelativeLayout>
